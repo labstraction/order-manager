@@ -1,34 +1,54 @@
 
+const order1 = new Order('matite', 1.50, 20);
 
-const order1 = new Order()
+console.log(order1);
 
-const order2 = new Order()
+console.log(order1.totalPrice);
 
-const order3 = new Order()
+console.log(order1.toString());
 
-const order4 = new Order()
+const person1 = new Person('Damiano', 'Di Lionardo', new Date(1993,4,29), 'male');
 
-const order5 = new Order()
+console.log(person1);
 
+const dob = new Date(1978,2,2);
 
-const client1 = new Client()
+const person2 = new Person('Andrea', 'Asioli', dob, 'male');
 
-const client2 = new Client()
+console.log(person2);
 
+const client1 = new Client('Manuela', 'Ariotti', new Date(1988,5,22), 'female', 'via Martini 56');
 
-client1.addOrder(order1)
-client1.addOrder(order2)
-client1.addOrder(order3)
+console.log(client1);
 
+const order2 = new Order('penne', 2.50, 100);
 
-client2.addOrder(order4)
-client2.addOrder(order5)
+const ordersArray = [order1, order2];
 
+const client2 = new Client('Cesare', 'Falzone', new Date(2003,2,4), 'male', 'via XX settembre 3', ordersArray);
 
-const employee = new Employee();
+console.log(client2);
 
-employee.addClient(client1);
-employee.addClient(client2);
+const employee1 = new Employee('Ares', 'Fiumicelli', new Date(1993,4,25), 'male', 'cancelleria', [client1, client2]);
 
+console.log(employee1);
 
-console.log(employee.bestClient())
+// console.log(new Date().getTime());
+
+console.log(employee1.age);
+
+console.log(employee1.toString());
+
+console.log(client2.totalExpenses());
+
+console.log(client2.toString());
+
+console.log(employee1.totalEarnings());
+
+client1.addOrder(new Order('temperini', 3, 10));
+
+console.log(employee1.totalEarnings());
+
+console.log(employee1.bestClient());
+
+console.log(employee1.toString());
